@@ -1,0 +1,84 @@
+html {
+  touch-action: manipulation;
+}
+
+html, body {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+
+body {
+  font-family: 'Times New Roman', serif;
+  font-size: 20px;
+  color: #000;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  font-family: 'Times New Roman', serif;
+  font-size: 20px;
+  color: #0000EE;
+  text-decoration: underline;
+  display: block;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+button:focus {
+  border: none;
+}
+
+button:active {
+  color: #ff0000;
+}
+
+#body-container {
+  z-index: 3;
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+#link-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 20px;
+}
+
+.link {
+  margin-top: 28px;
+}
+
+#sound, #credit {
+  position: fixed;
+  right: 32px;
+  font-style: italic;
+}
+
+#sound {
+  top: 12px;
+  text-decoration: underline;
+}
+
+#sound:hover {
+  cursor: pointer;
+}
+
+#credit {
+  bottom: 24px;
+}
