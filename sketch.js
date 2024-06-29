@@ -21,27 +21,27 @@ function setup() {
   describe('Grey pixel static that gets overlaid with sky-colored gradients upon button selection until the buttons eventually become unselectable.');
   cnv.style('display', 'block');
   frameRate(FRAME_RATE);
-  // 5:00am
-  c1_0 = color(30, 46, 66);
-  c2_0 = color(127, 131, 124);
-  // 8:00am
-  c1_1 = color(119, 138, 168);
-  c2_1 = color(183, 174, 159);
-  // 11:00am
-  c1_2 = color(201,225,250);
-  c2_2 = color(244,237,225);
-  // 2:00pm
-  c1_3 = color(171,198,222);
-  c2_3 = color(254,250,234);
-  // 5:00pm...probably later for effect (8pm?)
-  c1_4 = color(62,82,162);
-  c2_4 = color(243,174,131);
-  // 8:00pm...probably later for effect (9:30pm?)
-  c1_5 = color(2,37,114);
-  c2_5 = color(42,81,130);
-  // 11:00pm
+  // 8/16/2023
+  c1_0 = color(105,136,184);
+  c2_0 = color(240,231,190);
+  // 3/16/2024
+  c1_1 = color(126,182,249);
+  c2_1 = color(154,199,240);
+  // 6/18/2024
+  c1_2 = color(130,160,206);
+  c2_2 = color(161,181,199);
+  // 8/16/2023
+  c1_3 = color(37,88,187);
+  c2_3 = color(107,172,249);
+  // 7/16/2023
+  c1_4 = color(148,185,220);
+  c2_4 = color(239,135,94);
+  // 11/27/2023
+  c1_5 = color(31,29,31);
+  c2_5 = color(92,85,81);
+  // 10/11/2023
   c1_6 = color(0,0,0);
-  c2_6 = color(55,55,68);
+  c2_6 = color(62,55,49);
 
   c1Array = [c1_0, c1_1, c1_2, c1_3, c1_4, c1_5, c1_6];
   c2Array = [c2_0, c2_1, c2_2, c2_3, c2_4, c2_5, c2_6];
