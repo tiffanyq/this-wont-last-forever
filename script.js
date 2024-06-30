@@ -1,6 +1,7 @@
 const MAX_BREAK_FACTOR = 0.6;
 const INCREMENT_FACTOR = 0.1;
 let shouldBreakFactor = 0;
+let initialLinkBroken = false;
 let linksClicked = [false, false, false, false, false, false, false];
 let music;
 
@@ -17,15 +18,28 @@ function showBackground(e) {
     // randomly break link; never happens after first link selection
     if (shouldBreakLink()) {
       breakLink(link);
+      initialLinkBroken = true;
     }
   }  
 }
 
 function shouldBreakLink() {
-  const should = Math.random() < shouldBreakFactor ? true : false;
+  // also check for the specific case it should break: all selected at least once AND none broken
+  const should = Math.random() < shouldBreakFactor ||
+    shouldForceLinkBreak() ?
+    true :
+    false;
   // the likelihood of breaking should increase over time; no chance upon first selection
   shouldBreakFactor = Math.min(shouldBreakFactor+INCREMENT_FACTOR, MAX_BREAK_FACTOR);
   return should;
+}
+
+function shouldForceLinkBreak() {
+  if (initialLinkBroken) return false;
+  for (let i = 0; i < linksClicked.length; i++) {
+    if (linksClicked[i] === false) return false;
+  }
+  return true;
 }
 
 function breakLink(link) {
