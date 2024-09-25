@@ -14,13 +14,12 @@ function showBackground(e) {
   if (!linksClicked[linkPosition]) {
   link.style.color = "#551A8B";
   linksClicked[linkPosition] = true;
-  } else {
-    // randomly break link; never happens after first link selection
-    if (shouldBreakLink()) {
-      breakLink(link);
-      initialLinkBroken = true;
-    }
-  }  
+  }
+  // randomly break link; never happens after first link selection
+  if (shouldBreakLink()) {
+    breakLink(link);
+    initialLinkBroken = true;
+  }
 }
 
 function shouldBreakLink() {
@@ -36,10 +35,11 @@ function shouldBreakLink() {
 
 function shouldForceLinkBreak() {
   if (initialLinkBroken) return false;
+  let numLinksClicked = 0;
   for (let i = 0; i < linksClicked.length; i++) {
-    if (linksClicked[i] === false) return false;
+    if (linksClicked[i] === true) numLinksClicked++;
   }
-  return true;
+  return numLinksClicked === linksClicked.length;
 }
 
 function breakLink(link) {
@@ -73,4 +73,6 @@ window.addEventListener("load", function(event) {
   s.addEventListener("click", toggleSound, false);
   music = new Audio('sound.mp3');
   music.loop = true;
+
+  console.log("hello! if you are reading this thank you SO SO MUCH FOR BEING HERE!!!! <3");
 });
